@@ -1,0 +1,155 @@
+body.bg{
+margin:0;
+font-family:Arial;
+background:url('../images/bg.jpg') no-repeat center/cover;
+min-height:100vh;
+}
+.topbar{
+background:#2196f3;
+color:white;
+padding:15px;
+font-size:22px;
+}
+.card{
+background:white;
+width:380px;
+margin:80px auto;
+padding:25px;
+border-radius:10px;
+}
+input,select,button{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+}
+.place{
+background:white;
+padding:15px;
+border-radius:10px;
+}
+.place img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+/* LEFT PANEL */
+.left-panel{
+    width:200px;                /* wider for rectangle */
+    height:350px;               /* same as flight card */
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    position:absolute;
+    left:50%;                    /* center horizontally */
+    transform:translateX(-50%) translateY(-50px); /* float half over card */
+    top:50%;                     /* vertically center relative to hero */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;  /* space between boxes */
+    align-items:center;
+    padding:20px 0;
+    z-index:2000;
+}
+
+/* RECTANGULAR OPTION BOXES */
+.option-box{
+    width:160px;              /* rectangular width */
+    height:60px;              /* rectangular height */
+    background:rgba(255,255,255,0.18);
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    display:flex;
+    flex-direction:row;       /* text + icon horizontally */
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+    font-weight:600;
+    gap:8px;                  /* space between icon and text */
+}
+
+.option-box:hover{
+    transform:scale(1.08);
+    background:rgba(255,255,255,0.30);
+}
+
+.option-box span{
+    font-size:24px;
+    margin:0;
+}
+#fabBlurOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.2);
+    display: none;
+    z-index: 900;
+}
+
+.fab-main {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #ff5722;
+    color: #fff;
+    font-size: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1002;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.fab-menu {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 1001;
+}
+
+.fab-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fab-option {
+    width: 55px;
+    height: 55px;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.fab-option i {
+    font-size: 20px;
+    color: #ff5722;
+}
+
